@@ -16,7 +16,7 @@ namespace Pole
             //Praktické použití – uložení čísel do řady, práce s textem, vyhledávání dat
 
             int[] pole = new int[5]; //datový typ [] název = new int [velikost]
-            int[] cisla = { 10, 78, -2, 36 }; //Vložení hodnot při incializaci pole
+            int[] cisla = { 10, 0, -2, 36 }; //Vložení hodnot při incializaci pole
 
             Console.WriteLine("Stav pole před změnou");
             Console.WriteLine(cisla[0]);
@@ -35,12 +35,18 @@ namespace Pole
                 Console.WriteLine(pole[1]); //Každý průchod zobrazí obsah indexu pole
             }
 
+            int pocet_nul = 0;
             for (int i = 0; i < cisla.Length; i++) //Příkaz Length zjistí počet elementů pole
             {
                 Console.WriteLine(cisla [i]);
+                if (cisla[i] == 0)
+                {
+                    pocet_nul++;
+                    //pocet_nul = pocet_nul + 1;
+                    //pocet_nul +=1
+                }
             }
-
-
+            Console.WriteLine("Počet nul: " + pocet_nul);
 
             Console.ReadKey();
         }
