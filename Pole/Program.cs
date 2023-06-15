@@ -108,8 +108,7 @@ namespace Pole
                 if (cislo <= predchozi)
                 {
                     Console.WriteLine("Posloupnost není rostoucí.");
-                    Console.ReadKey();
-                    return;
+                    break;
                 }
 
                 soucet += cislo;
