@@ -15,6 +15,7 @@ namespace Pole
             //Velikost pole za běhu programu je neměnná
             //Praktické použití – uložení čísel do řady, práce s textem, vyhledávání dat
 
+            /*
             int[] pole = new int[5]; //datový typ [] název = new int [velikost]
             int[] cisla = { 10, 0, -2, 36 }; //Vložení hodnot při incializaci pole
 
@@ -47,6 +48,18 @@ namespace Pole
                 }
             }
             Console.WriteLine("Počet nul: " + pocet_nul);
+            */
+            
+            int[] cisla = new int[10];
+            for (int i = 0; i < 10; i++)
+            {
+                cisla[i] = i * 10;
+            }
+
+            for (int i = cisla.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine(cisla[i]);
+            }
 
             Console.ReadKey();
         }
