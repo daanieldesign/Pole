@@ -49,17 +49,77 @@ namespace Pole
             }
             Console.WriteLine("Počet nul: " + pocet_nul);
             */
-            
-            int[] cisla = new int[10];
-            for (int i = 0; i < 10; i++)
-            {
-                cisla[i] = i * 10;
-            }
 
-            for (int i = cisla.Length - 1; i >= 0; i--)
+            /*int[] cisla = new int[10];
+             for (int i = 0; i < 10; i++)
+             {
+                 cisla[i] = i * 10;
+             }
+
+             for (int i = cisla.Length - 1; i >= 0; i--)
+             {
+                 Console.WriteLine(cisla[i]);
+             }
+             */
+
+            //Program dostane na vstup posloupnost celých čísel. Spočítejte a vypište, kolik bylo mezi zadanými čísly kladných, záporných a nulových hodnot. Tuto informaci vypište.
+
+            /*    
+            int n, kladne = 0, zaporne = 0, nula = 0;
+
+                Console.Write("Zadejte počet čísel: ");
+                n = int.Parse(Console.ReadLine());
+
+                int[] cisla = new int[n];
+
+                for (int i = 0; i < n; i++)
+                {
+                    Console.Write("Zadejte cislo: ");
+                    cisla[i] = int.Parse(Console.ReadLine());
+                }
+
+                for (int i = 0; i < n; i++)
+                {
+                    if (cisla[i] > 0)
+                    {
+                        kladne++;
+                    }
+                    else if (cisla[i] < 0)
+                    {
+                        zaporne++;
+                    }
+                    else
+                    {
+                        nula++;
+                    }
+                }
+
+                Console.WriteLine("Počet čísel: {0} kladných, {1} záporných a {2} nuly.", kladne, zaporne, nula);*/
+
+            //Sestavte program, který bude od uživatele načítat čísla. Načítejte do té doby, dokud je posloupnost čísel rostoucí. Spočítejte průměrnou hodnotu zadaných čísel. Tuto informaci vypište.
+
+            int cislo, soucet = 0, pocet = 0, predchozi = int.MinValue;
+
+            do
             {
-                Console.WriteLine(cisla[i]);
-            }
+                Console.Write("Zadejte číslo: ");
+                cislo = int.Parse(Console.ReadLine());
+
+                if (cislo <= predchozi)
+                {
+                    Console.WriteLine("Posloupnost není rostoucí.");
+                    Console.ReadKey();
+                    return;
+                }
+
+                soucet += cislo;
+                pocet++;
+                predchozi = cislo;
+
+            } while (true);
+
+            double prumer = soucet / pocet;
+            Console.WriteLine("Průměrná hodnota čísel: {0}", prumer);
 
             Console.ReadKey();
         }
